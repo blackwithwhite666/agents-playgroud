@@ -6,6 +6,8 @@ import logging
 import random
 import uuid
 import os
+from pathlib import Path
+from PyPDF2 import PdfReader
 
 # Set up basic configuration for logging
 logging.basicConfig(
@@ -30,6 +32,17 @@ triage_agent = Agent(
     instructions="Handoff to the appropriate agent based on the language of the request.",
     handoffs=[spanish_agent, english_agent],
 )
+
+def pdf_to_text(pdf_path: str | Path) -> str:
+    """Return concatenated text from every page in `pdf_path`."""
+    reader = PdfReader(pdf_path)
+    parts: list[str] = []
+
+    for page_num, page in enumerate(reader.pages, start=1):
+        page_text = page.extract_text() or ""       # returns "" on scanned pages
+        parts.append(f"--- Page {page_num} ---\n{page_text}")
+
+    return "\n".join(parts)
 
 
 async def grab_links(page):
@@ -87,7 +100,7 @@ async def search_ozon(query):
             await page.wait_for_timeout(random.randint(100, 500))
             await page.emulate_media(media="print")
             await page.pdf(path=target_path, format="A4", print_background=True)
-            result.append(dict(url=url, path=target_path))
+            result.append(dict(url=url, text=pdf_to_text(target_path)))
         await browser.close()
     return result
 
