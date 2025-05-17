@@ -1,13 +1,13 @@
 [tool.poetry]
-name = "yc-review"
+name = "selectorat"
 version = "0.1.0"
-description = ":)"
-authors = ["Ivan Puzyrevskiy <sandello@yandex-team.ru>"]
+description = "shop assistant"
+authors = ["Ivan Puzyrevskiy <blackwithwhite666@gmail.com>"]
 readme = "README.md"
-packages = [{ include = "yc_review" }]
+packages = [{ include = "selectorat" }]
 
 [tool.poetry.dependencies]
-python = "^3.12,<3.13"
+python = "^3.11,<3.13"
 ipython = "^8.14.0"
 rich = "^13.5.2"
 jupyterlab = "^4.1.2"
