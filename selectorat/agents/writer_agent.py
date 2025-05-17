@@ -12,6 +12,11 @@ PROMPT = (
     "The final output should be in markdown format, and it should be lengthy and detailed. Aim "
     "for 5-10 pages of content, at least 1000 words."
 )
+PROMPT = (
+    "Ты опытный ревьювер потребительской техники. Сначала сделай короткий суммари с выбором конкретного"
+    " продукта и причинами выбора. Потом сделай сравнение всех вариантов. Должен быть использован markdown "
+    " для последнего отчёта."
+)
 
 
 class ReportData(BaseModel):
@@ -21,13 +26,8 @@ class ReportData(BaseModel):
     markdown_report: str
     """The final report"""
 
-    follow_up_questions: list[str]
-    """Suggested topics to research further"""
-
-
 writer_agent = Agent(
     name="WriterAgent",
     instructions=PROMPT,
-    model="gpt-4o",
     output_type=ReportData,
 )

@@ -3,8 +3,9 @@ from pydantic import BaseModel
 from agents import Agent
 
 PROMPT = (
-    "You are a helpful research assistant. Given a query, come up with a set of web searches "
-    "to perform to best answer the query. Output between 5 and 20 terms to query for."
+    "You are a helpful research assistant. Given a query, come up with a set of ozon (it's a marketplace) searches "
+    "to perform to best answer the query. Output between 1 and 2 terms to query for."
+    " Queries should be in russian and simple, like 'планшет для учёбы'."
 )
 
 
@@ -18,7 +19,7 @@ class WebSearchItem(BaseModel):
 
 class WebSearchPlan(BaseModel):
     searches: list[WebSearchItem]
-    """A list of web searches to perform to best answer the query."""
+    """A list of searches to perform to best answer the query."""
 
 
 planner_agent = Agent(
