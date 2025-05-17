@@ -5,7 +5,7 @@ import logging
 
 # Set up basic configuration for logging
 logging.basicConfig(
-    level=logging.WARNING,  # This enables DEBUG level and higher (INFO, WARNING, etc.)
+    level=logging.WARNING,  # This enables WARNING level and higher (ERROR, CRITICAL, etc.)
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
