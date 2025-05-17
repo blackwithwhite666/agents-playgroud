@@ -1,0 +1,7 @@
+oauth_token = "y1_AQAD-qJSJkznAAArgAAAAAAAS1ezAACyiHoFAANIna0fXoeEzHwBgvpFgA"
+
+project_root = "/Users/dldmitry/Yandex.Disk.localized/alice-review-generator"
+document_root = "/Users/dldmitry/Documents/Review_2024H2"
+
+sqlite_path = "/Users/dldmitry/Yandex.Disk.localized/alice-review-generator/database.sqlite"
+sqlite_options = ""

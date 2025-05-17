@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "yc-review"
+version = "0.1.0"
+description = ":)"
+authors = ["Ivan Puzyrevskiy <sandello@yandex-team.ru>"]
+readme = "README.md"
+packages = [{ include = "yc_review" }]
+
+[tool.poetry.dependencies]
+python = "^3.12,<3.13"
+ipython = "^8.14.0"
+rich = "^13.5.2"
+jupyterlab = "^4.1.2"
+numpy = "^1.26.4"
+pandas = "^2.2.1"
+#pymc = "^5.12.0"
+#pytensor = "^2.19"
+openpyxl = "^3.1.2"
+sqlmodel = "^0.0.16"
+typer = "^0.9.0"
+pydantic = "^2.6.4"
+pydantic-settings = "^2.2.1"
+ipywidgets = "^8.1.2"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.2.0"
+pytest = "^8.0.0"
+isort = "^5.13.0"
+
+[tool.black]
+line-length = 119
+
+[tool.isort]
+profile = "black"
+line_length = 119
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
