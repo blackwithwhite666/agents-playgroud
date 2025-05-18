@@ -4,8 +4,9 @@ from agents import Agent
 
 PROMPT = (
     "You are a helpful research assistant. Given a query, come up with a set of ozon (it's a marketplace) searches "
-    "to perform to best answer the query. Output between 1 and 2 terms to query for."
-    " Queries should be in russian and simple, like 'планшет для учёбы'."
+    "to perform to best answer the query. Output between 3 and 6 terms to query for. "
+    "Queries should be in russian and simple, like 'планшет для учёбы'. "
+    "Don't forget to also search for well known brands."
 )
 
 

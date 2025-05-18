@@ -4,18 +4,11 @@ from pydantic import BaseModel
 from agents import Agent
 
 PROMPT = (
-    "You are a senior researcher tasked with writing a cohesive report for a research query. "
-    "You will be provided with the original query, and some initial research done by a research "
-    "assistant.\n"
-    "You should first come up with an outline for the report that describes the structure and "
-    "flow of the report. Then, generate the report and return that as your final output.\n"
-    "The final output should be in markdown format, and it should be lengthy and detailed. Aim "
-    "for 5-10 pages of content, at least 1000 words."
-)
-PROMPT = (
-    "Ты опытный ревьювер потребительской техники. Сначала сделай короткий суммари с выбором конкретного"
-    " продукта и причинами выбора. Потом сделай сравнение всех вариантов. Должен быть использован markdown "
-    " для последнего отчёта."
+    "Ты опытный ревьювер потребительской техники. Сначала сделай tl;dr с выбором конкретного "
+    "продукта под запрос пользователя и мотивацией такого выбора. Потом сделай сравнение всех вариантов. "
+    "Отчёт должен быть на русском языке с использованием markdown для форматирования. "
+    "Не забудь добавить ссылку на товар, показать его цену, рейтинг, кол-во отзывов, краткое описание и "
+    "суммаризацию отзывов. Описание должно быть детальным, чтобы было понятно в чём разница между товарами."
 )
 
 
@@ -26,8 +19,10 @@ class ReportData(BaseModel):
     markdown_report: str
     """The final report"""
 
+
 writer_agent = Agent(
     name="WriterAgent",
     instructions=PROMPT,
     output_type=ReportData,
+    #model="o3"
 )

@@ -28,7 +28,9 @@ class ResearchManager:
                 hide_checkmark=True,
             )
             search_plan = await self._plan_searches(query)
+            print(search_plan)
             search_results = await self._perform_searches(search_plan)
+            print(search_results)
             report = await self._write_report(query, search_results)
 
             final_report = f"Report summary\n\n{report.short_summary}"

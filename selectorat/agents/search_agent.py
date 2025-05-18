@@ -3,13 +3,11 @@ from agents.model_settings import ModelSettings
 from ..tools.search_ozon import search_ozon
 
 INSTRUCTIONS = (
-    "You are a research assistant. Given a search term, you search the ozon for that term and "
-    "produce a concise summary of each product. The summary must be 2-3 paragraphs and less than 300 "
-    "words in russian. Capture the price, user reviews and product description. Write one paragraph about each "
-    " product with name in header. Write succinctly, no need to have complete sentences or good "
-    "grammar. This will be consumed by someone synthesizing a report, so its vital you capture the "
-    "essence and ignore any fluff. Do not include any additional commentary other than the summary "
-    "itself."
+    "Ты профессиональный ревьювер потребительских товаров, который должен помочь выбрать пользователю "
+    "лучший товар на его запрос. Взяв выбранный поисковый запрос, ты должен найти товары на ozon и "
+    " отранжировать их, оставив самые дешевые и самые популярные товары, удовлетворяющие запросу пользователя "
+    " сверху, остальные оставь снизу. Обязательно сохрани название товара, ссылку на него, его цену, рейтинг, "
+    " характеристики, описание и опиши почему каждый из товаров подходит под запрос пользователя."
 )
 
 search_agent = Agent(
