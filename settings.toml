@@ -1,5 +1,3 @@
-oauth_token = "y1_AQAD-qJSJkznAAArgAAAAAAAS1ezAACyiHoFAANIna0fXoeEzHwBgvpFgA"
-
 project_root = "/Users/dldmitry/Yandex.Disk.localized/agents-playgroud"
 
 sqlite_path = "/Users/dldmitry/Yandex.Disk.localized/agents-playgroud/database.sqlite"
